@@ -1,4 +1,12 @@
-책 출간 후 오류가 발견된 부분을 수정합니다.
+# 책 출간 후 오류가 발견된 부분을 수정합니다.
+
+## p30 NOTE
+~생성자에 선언된 변수는 클래스 멤버 변수가 됩니다.~
+-> 생성자에 접근제한자(public, private)와 함께 선언된 변수는 클래스 멤버 변수가 됩니다.
+
+~접근제한자(public, private)를 쓰지 않으면 public 변수가 됩니다.~
+-> 접근제한자를 쓰지 않으면 생성자 내로 스코프가 줄어듭니다. 즉, 생성자 내에서만 접근할 수 있습니다. 또한 readonly 키워드만 사용해도 public readonly와 동일하게 처리됩니다.
+
 
 ## 8장 typeorm 명령어
 `npm run typeorm migration:create src/migrations/CreateUserTable` 명령어를 수행하면 -d 옵션을 인식하지 못하는 에러가 발생합니다.
