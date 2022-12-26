@@ -21,7 +21,7 @@ Creates a new migration file.
 ```
 
 -d 옵션은 typeorm:generate 명령어에 필수로 포함되어야 하는 인수입니다. 따라서,
-1. package.json에서 -d 옵션을 제거하고 (d820130 참고)
+1. package.json에서 -d 옵션을 제거하고 ([d820130](https://github.com/dextto/book-nestjs-backend/commit/d820130a6d912c628a2623e659ed7736b2eba37e) 참고)
 2. typeorm:generate 명령어를 수행할 때 다음과 같이 직접 -d 옵션을 전달해야 합니다.
 ```
 npm run typeorm migration:generate src/migrations/CreateUserTable -- -d ./ormconfig.ts
