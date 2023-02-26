@@ -34,3 +34,28 @@ Creates a new migration file.
 ```
 npm run typeorm migration:generate src/migrations/CreateUserTable -- -d ./ormconfig.ts
 ```
+
+## p141 checkUserExists 함수
+```typescript
+private async checkUserExists(emailAddress: string): Promise<boolean> {
+  const user = await this.usersRepository.findOne({
+    where: {
+      email: emailAddress
+    }
+  });
+  
+  // return user !== undefined; // typeorm 0.3부터는 findOne의 리턴 타입이 Promise<Entity | null>임. 따라서 다음과 같은 코드가 되어야 합니다.
+  return user !== null; 
+}
+```
+
+## p238
+app.module.ts
+```typescript
+@Module({
+  ...
+  controllers: [HealthCheckController], // HealthCheckController는 controllers 속성에 선언되어야 함
+  ...
+})
+export class AppModule { }
+```
